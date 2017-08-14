@@ -12,10 +12,9 @@ Created on Mon Aug 14 17:26:40 2017
 # vocab_size: remember we initial embed the word with one-hot vector, the dimension of the vector is the vocab_size.
 # hidden_size: how many neurons we set up for each hidden layer
 # n_epochs: how many loops we'd like to run.
-# num_sampled: we use noise-contrastive estimation to ease the computation. See reference paper getting to now nce.
+# num_sampled: we use noise-contrastive estimation to ease the computation. See reference paper getting to know nce.
 # I am using TensorFlow 1.0 and Python 3.5
-# referenced from TF-tutorial: tensorflow/tensorflow/examples/tutorials/word2vec/
-# , strongly recommend you to read the tutorial codes. 
+# referenced from TF-tutorial: tensorflow/tensorflow/examples/tutorials/word2vec/, strongly recommend you to read the tutorial codes. 
 
 import numpy as np
 
