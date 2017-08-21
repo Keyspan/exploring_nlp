@@ -16,21 +16,22 @@ import itertools
 
 from config import configs
 
-configs = configs()
+config = configs()
 
+train_size = config.train_size
 
 
 class clean_data():
     
     def __init__(self):
         
-        data_path = configs.data_path
+        data_path = config.data_path
 
-        ratio = configs.freq_ratio
+        ratio = config.freq_ratio
         
-        start_vocabs = configs.start_vocabs
+        start_vocabs = config.start_vocabs
         
-        self.buckets = configs.buckets
+        self.buckets = config.buckets
         
         print("Reading 'tasks.csv' file...")
         
@@ -42,7 +43,7 @@ class clean_data():
 
             sentences = [x[0].lower() for x in reader]
             
-            self.sentences = sentences[:10000]
+            self.sentences = sentences[:train_size]
     
         print("{} sentences loaded.".format(len(self.sentences)))
 
@@ -105,7 +106,7 @@ class clean_data():
                 if len(x_current) <= sentence_size:
                     
                     data_buckets[bucket_id].append([x_current, y_current])
-                    
+                                        
                     break
                 
             current_process += 1
